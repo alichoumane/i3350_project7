@@ -32,7 +32,7 @@ class _HomeState extends State<Home> {
               Fluttertoast.showToast(
                   msg: "This is Center Short Toast",
                   toastLength: Toast.LENGTH_SHORT,
-                  gravity: ToastGravity.CENTER,
+                  gravity: ToastGravity.BOTTOM,
                   timeInSecForIosWeb: 1,
                   backgroundColor: Colors.red,
                   textColor: Colors.white,
@@ -66,6 +66,7 @@ class _HomeState extends State<Home> {
             const SizedBox(height: 20,),
             ElevatedButton(onPressed: (){
               showDialog(
+                  barrierDismissible:false,
                   context: context,
                   builder: (BuildContext context){
                     return AlertDialog(
@@ -104,7 +105,7 @@ class _HomeState extends State<Home> {
             ElevatedButton(onPressed: (){
               SnackBar snackBar = SnackBar(
                 content: Text('Message Deleted!', style: TextStyle(fontSize: 18.0),),
-                duration: Duration(seconds: 5),
+                duration: Duration(seconds: 10),
                 action: SnackBarAction(label: "Undo", onPressed: (){
                   // Do something
                 },),
